@@ -19,13 +19,17 @@ window.onload = function() {
     " while I was praying "
   ];
 
-  let p1 = Math.floor(Math.random() * who.length);
-  let p2 = Math.floor(Math.random() * action.length);
-  let p3 = Math.floor(Math.random() * what.length);
-  let p4 = Math.floor(Math.random() * when.length);
+  function randomWord(wordLength) {
+    return parseInt(Math.random() * wordLength);
+  }
+  let excusa =
+    who[randomWord(who.length)] +
+    " " +
+    action[randomWord(action.length)] +
+    " " +
+    what[randomWord(what.length)] +
+    " " +
+    when[randomWord(when.length)];
 
-  document.querySelector("#excuse").innerHTML =
-    who[p1] + " " + action[p2] + " " + what[p3] + " " + when[p4];
+  document.querySelector("#excuse").innerHTML = excusa;
 };
-
-console.log(document);
